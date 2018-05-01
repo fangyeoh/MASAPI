@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js">
+</script>
+<script src="js/index.js" type="text/javascript"></script>
+</head>
+<body>
+<form id="myForm">
+<h2>MOM Test Assigment</h2>
+<table>
+<tr>
+    <td>
+        Start Year
+    </td>
+    <td>
+        Start Month
+    </td>
+</tr>
+<tr>
+    <td>
+            
+            <select id="strYear">
+            </select>
+         
+    </td>
+    <td>
+        <select name="strMon" id="strMon">
+                 <option value="01">Jan</option>
+                 <option value="02">Feb</option>
+                 <option value="03">Mar</option>
+                 <option value="04">Apr</option>
+                 <option value="05">May</option>
+                 <option value="06">Jun</option>
+                 <option value="07">Jul</option>
+                 <option value="08">Aug</option>
+                 <option value="09">Sep</option>
+                 <option value="10">Oct</option>
+                 <option value="11">Nov</option>
+                 <option value="12">Dec</option>
+                 </select>
+    </td>
+</tr>
+<tr>
+    <td>
+        End Year
+    </td>
+    <td>
+        End Month
+    </td>
+</tr>
+<tr>
+    <td>
+            <select id="endYear">
+            </select>
+    </td>
+    <td>
+        <select name="endMon" id="endMon">
+                 <option value="01">Jan</option>
+                 <option value="02">Feb</option>
+                 <option value="03">Mar</option>
+                 <option value="04">Apr</option>
+                 <option value="05">May</option>
+                 <option value="06">Jun</option>
+                 <option value="07">Jul</option>
+                 <option value="08">Aug</option>
+                 <option value="09">Sep</option>
+                 <option value="10">Oct</option>
+                 <option value="11">Nov</option>
+                 <option value="12">Dec</option>
+        </select>
+    </td>
+
+</tr>
+<tr>
+    <td colspan="2">
+        <div id="list"></div>
+    </td>
+</tr>
+<tr>
+        <td>
+        <input type="button" onclick="check()" value="Submit">
+        </td>
+        <td>
+        <input type="button" onclick="myFunction()" value="Reset">
+        </td>
+</tr>
+<tr>
+    <td colspan="2">
+        <div id="tablerate"></div>
+    </td>
+</tr>
+</table>
+</form>
+</body>
+</html>
