@@ -1,6 +1,48 @@
 function myFunction() {
     document.getElementById("myForm").reset();
 }
+
+function myFieldName(v_valueview) {
+
+    switch (v_valueview) {
+        case "prime_lending_rate":
+            v_checkboxName = "Prime Lending Rate";
+        break;
+        case "banks_fixed_deposits_3m":
+            v_checkboxName = "Banks Fixed Deposits 3 Months";
+        break;
+        case "banks_fixed_deposits_6m":
+            v_checkboxName = "Banks Fixed Deposits 6 Months";
+        break;
+        case "banks_fixed_deposits_12m":
+            v_checkboxName = "Banks Fixed Deposits 12 Months";
+        break;
+        case "banks_savings_deposits":
+            v_checkboxName = "Banks Savings Deposits";
+        break;
+        case "fc_hire_purchase_motor_3y":
+            v_checkboxName = "Finance Companies Loans - Hire Purchase of New Vehicles For 3 Years";
+        break;
+        case "fc_housing_loans_15y":
+            v_checkboxName = "Finance Companies Housing Loans For 15 Years.";
+        break;
+        case "fc_fixed_deposits_3m":
+            v_checkboxName = "Finance Companies Fixed Deposits 3 Months";
+        break;
+        case "fc_fixed_deposits_6m":
+            v_checkboxName = "Finance Companies Fixed Deposits 6 Months";
+        break;
+        case "fc_fixed_deposits_12m":
+            v_checkboxName = "Finance Companies Fixed Deposits 12 Months";
+        break;
+        case "fc_savings_deposits":
+            v_checkboxName = "Finance Companies Savings Deposits";
+        break;
+    }
+
+    return v_checkboxName;              // The function returns the v_checkboxName
+}
+
 function check(thisform)
 {
     var v_rateSel = document.getElementsByName("rates");
@@ -21,42 +63,8 @@ function check(thisform)
 
             var valueView = v_rateSel[y].value;
 
-            switch (valueView) {
-                case "prime_lending_rate":
-                    checkboxName = "Prime Lending Rate";
-                break;
-                case "banks_fixed_deposits_3m":
-                    checkboxName = "Banks Fixed Deposits 3 Months";
-                break;
-                case "banks_fixed_deposits_6m":
-                    checkboxName = "Banks Fixed Deposits 6 Months";
-                break;
-                case "banks_fixed_deposits_12m":
-                    checkboxName = "Banks Fixed Deposits 12 Months";
-                break;
-                case "banks_savings_deposits":
-                    checkboxName = "Banks Savings Deposits";
-                break;
-                case "fc_hire_purchase_motor_3y":
-                    checkboxName = "Finance Companies Loans - Hire Purchase of New Vehicles For 3 Years";
-                break;
-                case "fc_housing_loans_15y":
-                    checkboxName = "Finance Companies Housing Loans For 15 Years.";
-                break;
-                case "fc_fixed_deposits_3m":
-                    checkboxName = "Finance Companies Fixed Deposits 3 Months";
-                break;
-                case "fc_fixed_deposits_6m":
-                    checkboxName = "Finance Companies Fixed Deposits 6 Months";
-                break;
-                case "fc_fixed_deposits_12m":
-                    checkboxName = "Finance Companies Fixed Deposits 12 Months";
-                break;
-                case "fc_savings_deposits":
-                    checkboxName = "Finance Companies Savings Deposits";
-                break;
-            }
-
+            checkboxName = myFieldName(valueView);
+           
             showtable+= '<td>'+checkboxName+'</td>'
 
             if (checkboxview == "") {
@@ -192,41 +200,8 @@ $.ajax({
        var d = field.result.fields[i].id;
        var checkboxValue = d;
 
-    switch (checkboxValue) {
-    case "prime_lending_rate":
-        checkboxName = "Prime Lending Rate";
-      break;
-    case "banks_fixed_deposits_3m":
-        checkboxName = "Banks Fixed Deposits 3 Months";
-      break;
-    case "banks_fixed_deposits_6m":
-        checkboxName = "Banks Fixed Deposits 6 Months";
-      break;
-    case "banks_fixed_deposits_12m":
-        checkboxName = "Banks Fixed Deposits 12 Months";
-      break;
-    case "banks_savings_deposits":
-        checkboxName = "Banks Savings Deposits";
-      break;
-    case "fc_hire_purchase_motor_3y":
-        checkboxName = "Finance Companies Loans - Hire Purchase of New Vehicles For 3 Years";
-      break;
-    case "fc_housing_loans_15y":
-        checkboxName = "Finance Companies Housing Loans For 15 Years.";
-      break;
-    case "fc_fixed_deposits_3m":
-        checkboxName = "Finance Companies Fixed Deposits 3 Months";
-      break;
-    case "fc_fixed_deposits_6m":
-        checkboxName = "Finance Companies Fixed Deposits 6 Months";
-      break;
-    case "fc_fixed_deposits_12m":
-        checkboxName = "Finance Companies Fixed Deposits 12 Months";
-      break;
-    case "fc_savings_deposits":
-        checkboxName = "Finance Companies Savings Deposits";
-      break;
-     }
+       checkboxName = myFieldName(checkboxValue);
+
       checkBoxString += "<input type='checkbox' name='rates' value='"+checkboxValue+"'>"+checkboxName+"<br>";
        }
 
