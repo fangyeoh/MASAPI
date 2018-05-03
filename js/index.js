@@ -175,7 +175,7 @@ $.ajax({
        var optionValue = d.substr(0, 4);
        var optionText = d.substr(0, 4);
 
-       if (!optionString.includes(optionValue)){
+       if (optionString.search(optionValue) == -1){
         optionString += "<option value='"+optionValue+"'>"+optionText+"</option>";
        }
 
